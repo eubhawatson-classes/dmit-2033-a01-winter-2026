@@ -1,0 +1,162 @@
+/* Variable Definitions */
+:root {
+    --container-max: 68rem;
+    --gutter: 1rem;
+    --border: rgb(215, 211, 209);
+    --text: rgb(12, 10, 9);
+    --muted: rgb(41, 37, 36);
+    --bg: rgb(245, 245, 244);
+    --rose: rgb(199, 0, 54);
+}
+
+/* Soft Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: space-between;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100vh;
+
+    ul {
+        list-style-type: none;
+    }
+
+    p {
+        color: var(--muted);
+    }
+
+    h1, h2 {
+        font-weight: 400;
+    }
+}
+
+/* Utility Classes */
+.brand {
+    align-items: center;
+    display: inline-flex;
+    font-size: 2rem;
+    margin: var(--gutter) 0;
+    text-decoration: none;
+
+    .icon {
+        color: var(--rose);
+        width: 2.5rem;
+    }
+}
+
+.container {
+    margin: auto;
+    max-width: var(--container-max);
+    padding: var(--gutter);
+}
+
+.flex {
+    align-items: center;
+    display: flex;
+    gap: var(--gutter);
+}
+
+.icon {
+    fill: currentColor;
+    width: 2rem;
+}
+
+.visually-hidden {
+    height: 0px;
+    left: -9999px;
+    overflow: hidden;
+    position: absolute;
+    top: -9999px;
+    width: 0px;
+}
+
+/* Layout Styles */
+a {
+    align-items: center;
+    color: var(--muted);
+    display: flex;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+
+    nav,
+    ul {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        gap: var(--gutter);
+    }
+
+    a:not(.brand) {
+        color: var(--rose);
+        font-size: 1.125rem;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Main Layout */
+
+main {
+    padding-block: 2rem;
+}
+
+.social {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    a {
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 2rem;
+        display: inline-flex;
+        gap: 0.25rem;
+        height: 2.5rem;
+        padding: 0.5rem 0.75rem;
+        transition: 0.3s ease all;
+
+        &:hover,
+        &:focus-visible {
+            background-color: #fff;
+        }
+    }
+}
+
+/* Footer Layout */
+footer {
+    border-top: 1px solid var(--border);
+
+    > .flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    p {
+        margin-top: -3rem;
+    }
+}
+
+/* Focus Styles */
+:focus-visible {
+    outline: 0.25rem solid var(--rose);
+    outline-offset: 0.25rem;
+    border-radius: 0.5rem;
+}
