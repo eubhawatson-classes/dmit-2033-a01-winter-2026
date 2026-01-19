@@ -155,8 +155,18 @@ header nav {
     background-color: var(--primary);
     left: 0;
     position: absolute;
-    top: 6.25rem;
+    top: -100vh;
+    transition: 0.3s ease top;
     width: 100%;
+    z-index: 99;
+
+    &.show-menu {
+        top: 6.25rem;
+    }
+
+    &:not(.show-menu) {
+        top: -100vh;
+    }
 }
 
 /* Main */
@@ -166,10 +176,91 @@ main {
     flex: 1;
     justify-content: center;
     text-align: center;
+
+    section {
+        padding: 2rem 1.25rem;
+
+        h2 {
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            color: #4b5563;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            box-shadow: var(--shadow-sm);
+            border-radius: 8px;
+            display: inline-block;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            min-width: 10rem;
+
+            &+ .btn {
+                margin-left: 0.5rem;
+            }
+
+            &.primary {
+                background-color: var(--primary);
+                border: 1px solid var(--primary);
+                color: #fff;
+
+                &:hover {
+                    background-color: var(--primary-hover);
+                }
+            }
+
+            &.secondary {
+                background-color: var(--secondary);
+                border: 1px solid var(--secondary-hover);
+                color: var(--text);
+
+                &:hover {
+                    background-color: var(--secondary-hover);
+                }
+            }
+        }
+    }
 }
 
 /* Footer */
 footer {
     background-color: var(--primary);
-    
+    border-top: 1px solid var(--primary-hover);
+    text-transform: lowercase;
+
+    nav ul {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            border: 1px solid var(--primary-hover);
+            flex: 1;
+
+            &:hover {
+                background-color: var(--primary-hover);
+            }
+
+            a, span {
+                color: #fff;
+                display: block;
+                font-size: 0.875rem;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            a {
+                min-height: 14mm;
+                padding: 0.75rem 0.5rem;
+
+                span svg {
+                    width: 1.5rem;
+                }
+            }
+        }
+    }
 }
