@@ -23,11 +23,21 @@
      <header>
         <div class="container">
             <h1>The Fluid Sidebar (The Asymmetrical Split)</h1>
-            <p class="lead"></p>
+            <p class="lead">This pattern establishes a priority-based layout. The sidebar requests a specific ideal (ex. 30ch), while the main content is configured to be 'greedier', aggressively filling all remaining space. Wrapping occurs only when the content area no longer meets it own minimum readable width, providing a natural, component-driven transition.</p>
         </div>
      </header>
-     <main>
-
+     <main class="container">
+        <section class="fluid-sidebar flex">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius tenetur asperiores eos hic, molestias voluptates quis labore excepturi vitae dolorem placeat, dolore saepe maiores quae laudantium ad ea est qui?</p>
+            </div>
+            <div class="content">
+                <h2>Main Content</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam nam dignissimos minus veniam possimus alias quibusdam beatae nemo commodi architecto voluptatibus ipsum maiores quidem unde fugit maxime eaque, repellat neque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugiat laborum ullam, ratione minima ea aspernatur reprehenderit aliquam doloremque unde rem, omnis a autem repellat corrupti temporibus necessitatibus eveniet quo?</p>
+            </div>
+        </section>
      </main>
      <footer>
         <p><a href="index.html">Return to Table of Contents</a></p>

@@ -1,0 +1,79 @@
+:root {
+    --sky-900: #0c4a6e;
+    --sky-700: #0369a1;
+    --sky-50: #f0f9ff;
+}
+
+/* Utility Classes */
+.flex {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.container {
+    margin: auto;
+    max-width: 1280px;
+}
+
+/* Albatross */
+
+.albatross-container {
+    flex-wrap: wrap;
+
+    .item {
+        background-color: var(--sky-700);
+        color: var(--sky-50);
+        /* 
+            This is the crux of the pattern. First, we define the threshold; in our case, this is 640px.
+
+            If the container is less than 640px, then it becomes 100% wide (i.e. it will stack). 
+
+            If the parent container is greater than 640px, then the items will take their fair share (50%) of the row.
+        */
+        flex-basis: calc((640px - 100%) * 999);
+        flex-grow: 1;
+        /* These additional constraints will help keep the items usable (wide enough) after the switch. */
+        min-inline-size: min(100%, 320px);
+        max-inline-size: 100%;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Fluid Sidebar */
+
+.fluid-sidebar {
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    div {
+        background-color: var(--sky-700);
+        padding: 1rem 2rem;
+    }
+
+    h2, p {
+        color: var(--sky-50);
+        margin: 1rem;
+    }
+
+    .sidebar {
+        /* Our clamp values are: 
+            min: 360px
+            preferred: 30ch
+            max: 25% of the parent container
+        */
+        flex-basis: clamp(360px, 30ch, 25%);
+        flex-grow: 1;
+    }
+
+    .content {
+        flex-basis: 0;
+        /* This super high value forces the content to take up the remaining space. */
+        flex-grow: 999;
+        /* This gives the browser an intrinsic hint for when it should wrap. */
+        min-inline-size: 50%;
+    }
+}
+
+/* Deconstructed Pancake */
