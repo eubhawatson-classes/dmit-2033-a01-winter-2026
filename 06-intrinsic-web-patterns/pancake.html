@@ -23,11 +23,16 @@
      <header>
         <div class="container">
             <h1>The Deconstructed Pancake Layout</h1>
-            <p class="lead"></p>
+            <p class="lead">A pattern where items sit side-by-side until they reach a minimum threshold, at which point they automatically stack. If there is an odd number of items, the last item will expand to fill the entire remaining amount of space on its own row.</p>
         </div>
      </header>
      <main>
-
+        <!-- .pancake-container.container.flex>.pancake-box*3 -->
+         <div class="pancake-container container flex">
+            <div class="pancake-box">1</div>
+            <div class="pancake-box">2</div>
+            <div class="pancake-box">3</div>
+         </div>
      </main>
      <footer>
         <p><a href="index.html">Return to Table of Contents</a></p>

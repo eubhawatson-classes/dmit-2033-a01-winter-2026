@@ -77,3 +77,15 @@
 }
 
 /* Deconstructed Pancake */
+
+.pancake-container {
+    flex-wrap: wrap;
+
+    .pancake-box {
+        background-color: var(--sky-700);
+        color: var(--sky-50);
+        /* min-width: 20rem; */
+        flex: 1 1 20rem;
+        padding: 1rem;
+    }
+}
