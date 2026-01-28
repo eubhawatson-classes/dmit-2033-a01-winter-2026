@@ -1,0 +1,183 @@
+/* Colour Palette from Tailwind v.3: https://v3.tailwindcss.com/docs/customizing-colors#default-color-palette */
+:root {
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --teal-700: #0f766e;
+    --teal-800: #115e59;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background-color: var(--slate-50);
+    color: var(--slate-800);
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Utilities */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+}
+
+.grid-container {
+    display: grid;
+    gap: var(--gutter);
+
+    /*
+        Because the media query is nested, this means it's within the scopt of the .grid-container. It cannot apply styles to anything outside of it. 
+    */
+    @media (min-width: 1080px) {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 42rem), 1fr)) minmax(16rem, 22rem);
+        align-items: stretch;
+
+        > h2 {
+            grid-column: 1 / -1;
+            margin-bottom: var(--s-2);
+        }
+
+        > .flex-container {
+            grid-column: 1;
+        }
+
+        aside {
+            grid-column: -1 / -2;
+
+            a {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.btn {
+    background-color: var(--teal-700);
+    border-radius: calc(var(--radius) / 4);
+    box-shadow: var(--shadow-sm);
+    color: white;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    transition: 0.4s ease all;
+
+    &:hover,
+    &:active {
+        background-color: var(--teal-800);
+    }
+}
+
+/* 
+    This will target any anchor tags without a class (like the links in the aside, not the .btns). 
+*/
+a:not([class]) {
+    color: var(--teal-700);
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: var(--gutter);
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+        color: var(--teal-800);
+        text-decoration: underline;
+    }
+}
+
+/* Main Layout */
+
+header, main {
+    padding: var(--gutter);
+}
+
+header {
+    background-color: white;
+    border-bottom: 1px solid var(--slate-100);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--gutter);
+}
+
+main {
+    max-width: 1700px;
+    margin: auto;
+}
+
+/* Card Components */
+
+aside,
+.card {
+    background-color: white;
+    border: 1px solid var(--slate-100);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card {
+    /* 
+        Here, we're declaring each card as its own container. This will allow the card's internal layout to respond to the card's width, not the viewport or screen size (like in media queries).
+    */
+    container-type: inline-size;
+    container-name: card;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 min(100%, 360px);
+
+    .card-layout {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .card-header {
+            overflow: hidden;
+            padding: var(--gutter);
+        }
+
+        .card-body {
+            /* 
+                The card body is a vertical stack. `flex: 1` lets it absorb extra height so the button can be pushed to the bottom. This makes things visually line up a little tidier.
+            */
+            flex: 1;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 0.75rem;
+            padding: var(--gutter);
+
+            .btn {
+                /* 
+                    This pushes the button to the bottom of the card, ensuring all buttons line up across cards when they are side-by-side.
+                */
+                align-self: flex-end;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@container card (min-width: 550px) {
+    /* 
+        When a card itself becomes wide enough, we switch from a vertical layout to a horizontal one. 
+
+        This decision is based on the card's available space, not the screen size.
+    */
+    .card .card-layout {
+        flex-direction: row;
+        align-items: center;
+
+        .card-header {
+            flex: 0 0 50%;
+        }
+    }
+}
+
+aside {
+    padding: var(--s-5) var(--gutter);
+
+    a:not(:last-of-type) {
+        border-bottom: 1px solid var(--slate-200);
+        padding-bottom: var(--gutter);
+    }
+}
