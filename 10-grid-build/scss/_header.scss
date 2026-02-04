@@ -1,0 +1,42 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+header {
+    border-bottom: 1px solid c(color-border);
+    box-shadow: 0 0 8px c(color-border);
+
+    .inner-container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .btn {
+        background-color: c(color-bg);
+        border: none;
+        cursor: pointer;
+        padding: 0.75rem;
+    }
+
+    nav {
+        flex: 0 0 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height ease-in-out 1s;
+
+        &.show {
+            max-height: unset;
+        }
+
+        li {
+            line-height: 3.5rem;
+            margin-bottom: 0.75rem;
+
+            a {
+                display: block;
+
+            }
+        }
+    }
+}

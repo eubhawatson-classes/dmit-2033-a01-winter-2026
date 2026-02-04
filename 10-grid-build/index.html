@@ -156,14 +156,39 @@
 
             <section class="col">
                 <h2>Navigation</h2>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#recent-posts">Recent</a></li>
+                        <li><a href="#popular-posts">Popular</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>
+                </nav>
             </section>
 
             <section class="col">
                 <h2>Categories</h2>
+
+                <nav>
+                    <ul>
+                        <li><a href="search.html?q=meals">Meals</a></li>
+                        <li><a href="search.html?q=exercise">Exercises</a></li>
+                        <li><a href="search.html?q=mind">Mind</a></li>
+                    </ul>
+                </nav>
             </section>
             
             <section class="col">
                 <h2>Newsletter</h2>
+
+                <form action="index.html" method="POST">
+                    <!-- Text Field -->
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="hello@email.com" required>
+                    <!-- Submit -->
+                    <input type="submit" id="submit" name="submit" value="Sign Up">
+                </form>
             </section>
         </div>
     </footer>

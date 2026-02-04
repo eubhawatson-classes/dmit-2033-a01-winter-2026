@@ -1,0 +1,22 @@
+:root {
+    // Size Token Configuration
+
+    --baseline: 0.5rem;
+
+    @for $i from 1 through 6 {
+        --s-#{$i}: calc(var(--baseline) * #{$i});
+    }
+
+    --radius: 16px;
+    --gutter: var(--s-3);
+
+    // Type Scale Configuration
+    --fs-base: 1rem;
+    --fs-scale: 1.25;
+
+    --fs-0: var(--fs-base);
+
+    @for $i from 1 through 6 {
+        --fs-#{$i}: calc(var(--fs-#{$i - 1}) * var(--fs-scale));
+    }
+}

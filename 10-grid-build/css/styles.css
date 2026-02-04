@@ -1,1 +1,145 @@
-/*# sourceMappingURL=styles.css.map */
+/*
+    Below is a tiny helper function. It lets us write:
+
+        color: c(color-text);
+
+    instead of the longer:
+
+        color: var(--color-text);
+*/
+/*
+    @each is our Sass "foreach": for each key ($k) and value ($v) in the map we created up above, output a line like --color-text: #323232;
+
+    First, we loop through all of our default (light mode) variables; next, we create an @media rule for dark mode, then loop through all of the dark mode colours.
+*/
+:root {
+  --color-bg: #eceff1;
+  --color-text: #323232;
+  --color-muted: #4b5563;
+  --color-border: #cfd8dc;
+  --color-btn: #262626;
+  --color-accent: #00796b;
+  --color-accent-strong: #134e4a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #292f35;
+    --color-text: #eceff1;
+    --color-muted: #cfd8dc;
+    --color-border: #171717;
+    --color-btn: #111;
+    --color-accent: #26a69a;
+    --color-accent-strong: #00796b;
+  }
+}
+:root {
+  --baseline: 0.5rem;
+  --s-1: calc(var(--baseline) * 1);
+  --s-2: calc(var(--baseline) * 2);
+  --s-3: calc(var(--baseline) * 3);
+  --s-4: calc(var(--baseline) * 4);
+  --s-5: calc(var(--baseline) * 5);
+  --s-6: calc(var(--baseline) * 6);
+  --radius: 16px;
+  --gutter: var(--s-3);
+  --fs-base: 1rem;
+  --fs-scale: 1.25;
+  --fs-0: var(--fs-base);
+  --fs-1: calc(var(--fs-0) * var(--fs-scale));
+  --fs-2: calc(var(--fs-1) * var(--fs-scale));
+  --fs-3: calc(var(--fs-2) * var(--fs-scale));
+  --fs-4: calc(var(--fs-3) * var(--fs-scale));
+  --fs-5: calc(var(--fs-4) * var(--fs-scale));
+  --fs-6: calc(var(--fs-5) * var(--fs-scale));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+header,
+footer {
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+}
+
+.inner-container,
+.grid-container {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+header {
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 0 8px var(--color-border);
+}
+header .inner-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header .btn {
+  background-color: var(--color-bg);
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+}
+header nav {
+  flex: 0 0 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height ease-in-out 1s;
+}
+header nav.show {
+  max-height: unset;
+}
+header nav li {
+  line-height: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+header nav li a {
+  display: block;
+}/*# sourceMappingURL=styles.css.map */

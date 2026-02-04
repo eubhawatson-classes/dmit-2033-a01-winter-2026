@@ -1,0 +1,51 @@
+// We'll start by creating two small maps (which are like dictionaries, or arrays).
+
+$light: (
+  color-bg:    #eceff1,
+  color-text:  #323232,
+  color-muted: #4b5563,
+  color-border:#cfd8dc,
+  color-btn:   #262626,
+  color-accent:#00796b,
+  color-accent-strong:#134e4a
+);
+
+$dark: (
+  color-bg:    #292f35,
+  color-text:  #eceff1,
+  color-muted: #cfd8dc,
+  color-border:#171717,
+  color-btn:   #111,
+  color-accent:#26a69a,
+  color-accent-strong:#00796b
+);
+
+/*
+    Below is a tiny helper function. It lets us write:
+
+        color: c(color-text);
+    
+    instead of the longer:
+
+        color: var(--color-text);
+*/
+
+@function c($name) {
+    @return var(--#{$name});
+}
+
+/*
+    @each is our Sass "foreach": for each key ($k) and value ($v) in the map we created up above, output a line like --color-text: #323232;
+
+    First, we loop through all of our default (light mode) variables; next, we create an @media rule for dark mode, then loop through all of the dark mode colours.
+*/
+
+:root {
+    @each $k, $v in $light { --#{$k}: #{$v}; }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @each $k, $v in $dark { --#{$k}: #{$v}; }
+    }
+}
