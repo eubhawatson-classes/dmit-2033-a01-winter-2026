@@ -1,0 +1,83 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+main {
+
+    .grid-container,
+    section {
+        display: grid;
+        gap: var(--s-2);
+        margin: 0 auto;
+    }
+
+    section {
+        margin-bottom: var(--s-6);
+    }
+
+    .recent-posts article {
+        border-bottom: 1px solid c(color-border);
+
+        img {
+            border-radius: var(--radius);
+            padding-top: var(--s-3);
+        }
+    }
+
+    .popular-posts {
+        article {
+            background-color: c(color-bg-strong);
+            border: 1px solid c(color-border);
+            border-radius: var(--radius);
+
+            img {
+                border-radius: var(--radius) var(--radius) 0 0;
+            }
+        }
+
+        div {
+            padding: var(--s-3) var(--s-3) 0 var(--s-3);
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    main {
+        .grid-container {
+            grid-template-columns: repeat(12, 1fr);
+            max-width: $sm;
+        }
+
+        .recent-posts,
+        .popular-posts {
+            grid-template-rows: min-content;
+        }
+
+        .recent-posts {
+            grid-column: 1 / span 6;
+        }
+
+        .popular-posts {
+            grid-column: 7 / span 6;
+        }
+    }
+}
+
+@media (min-width: $md) {
+    main .grid-container {
+        max-width: $md;
+
+        .recent-posts {
+            grid-column: 1 / span 8;
+        }
+
+        .popular-posts {
+            grid-column: 9 / span 4;
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    main .grid-container {
+        max-width: $lg;
+    }
+}

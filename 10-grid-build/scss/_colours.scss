@@ -1,22 +1,24 @@
 // We'll start by creating two small maps (which are like dictionaries, or arrays).
 
 $light: (
-  color-bg:    #eceff1,
-  color-text:  #323232,
-  color-muted: #4b5563,
-  color-border:#cfd8dc,
-  color-btn:   #262626,
-  color-accent:#00796b,
+  color-bg:       #eceff1,
+  color-bg-strong:#f7f8f9,
+  color-text:     #323232,
+  color-muted:    #4b5563,
+  color-border:   #cfd8dc,
+  color-btn:      #262626,
+  color-accent:   #00796b,
   color-accent-strong:#134e4a
 );
 
 $dark: (
-  color-bg:    #292f35,
-  color-text:  #eceff1,
-  color-muted: #cfd8dc,
-  color-border:#171717,
-  color-btn:   #111,
-  color-accent:#26a69a,
+  color-bg:       #292f35,
+  color-bg-strong:#3b434b,
+  color-text:     #eceff1,
+  color-muted:    #cfd8dc,
+  color-border:   #171717d4,
+  color-btn:      #111,
+  color-accent:   #26a69a,
   color-accent-strong:#00796b
 );
 

@@ -2,6 +2,7 @@
 @use 'sizing' as *;
 
 header {
+    background-color: c(color-bg-strong);
     border-bottom: 1px solid c(color-border);
     box-shadow: 0 0 8px c(color-border);
 
@@ -13,10 +14,18 @@ header {
     }
 
     .btn {
-        background-color: c(color-bg);
-        border: none;
+        background-color: c(color-bg-strong);
+        border: 1px solid c(color-border);
+        border-radius: var(--radius);
+        color: c(color-text);
         cursor: pointer;
         padding: 0.75rem;
+        transition: background-color 0.5s ease-in-out;
+
+        &:hover,
+        &:active {
+            background-color: c(color-accent);
+        }
     }
 
     nav {
@@ -26,7 +35,7 @@ header {
         transition: max-height ease-in-out 1s;
 
         &.show {
-            max-height: unset;
+            max-height: 275px;
         }
 
         li {
@@ -35,7 +44,30 @@ header {
 
             a {
                 display: block;
+                font-size: 1.125rem;
+                padding-left: var(--s-2);
+            }
+        }
+    }
+}
 
+@media (min-width: $xs) {
+    header {
+        .btn {
+            display: none;
+        }
+
+        nav {
+            flex: 0 1 auto;
+            max-height: unset;
+
+            ul {
+                display: flex;
+                gap: var(--s-3);
+
+                li {
+                    margin-bottom: 0;
+                }
             }
         }
     }
