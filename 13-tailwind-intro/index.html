@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fabled Flora</title>
+
+    <!-- Additional Meta Information -->
+    <meta name="description" content="Fabled Flora celebrates Alberta's flora with guides, walks, and pollinator-friendly gardening tips. Built with TailwindCSS via the Play CDN.">
+
+    <!-- TailwindCSS Play CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom Styles for Hero Banner -->
+    <style>
+        main section:first-of-type {
+            background-image: url('img/meadow-banner.webp');
+        }
+    </style>
+
+    <!-- Custom Script (For Hamburger Menu) -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-neutral-100 text-slate-900">
+    <header class="bg-white shadow-lg py-2 sticky top-0 z-50">
+        <section class="container mx-auto px-6 flex justify-between items-center relative">
+            <h1><a href="index.html" class="text-2xl md:text-3xl lg:text-4xl font-semibold text-emerald-800 hover:text-emerald-700 transition duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500 focus-visible:ring-offset-white rounded-md px-1">Fabled Flora</a></h1>
+
+            <button id="menuToggle" type="button" aria-labelledby="menuToggleLabel" aria-expanded="false" class="text-slate-700 hover:cursor-pointer hover:bg-neutral-100 rounded-md p-4 z-10 my-3 transition duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500 md:hidden">
+                <span class="flex flex-col items-center">
+                    <!-- Hamburger Icon -->
+                    <span aria-hidden="true" class="block w-8 h-0.5 bg-current rounded mb-1"></span>
+                    <span aria-hidden="true" class="block w-8 h-0.5 bg-current rounded mb-1"></span>
+                    <span aria-hidden="true" class="block w-8 h-0.5 bg-current rounded mb-1"></span>
+
+                    <!-- Button Label -->
+                    <span id="menuToggleLabel" class="text-[0.85rem] leading-4 uppercase tracking-wide font-medium mt-1.5">menu</span>
+                </span>
+            </button>
+
+            <nav id="menu" class="fixed top-0 left-0 mt-18 p-4 w-full shadow-lg bg-white hidden md:static md:w-auto md:bg-transparent md:m-0 md:block md:shadow-none">
+                <ul class="md:flex md:gap-2">
+                    <li><a href="#" class="text-slate-800 hover:text-emerald-800 transition duration-300 block px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500">Home</a></li>
+                    <li><a href="#" class="text-slate-800 hover:text-emerald-800 transition duration-300 block px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500">About</a></li>
+                    <li><a href="#" class="text-slate-800 hover:text-emerald-800 transition duration-300 block px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500">Gardening Guide</a></li>
+                    <li><a href="#" class="text-slate-800 hover:text-emerald-800 transition duration-300 block px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main class="space-y-16 lg:space-y-24">
+        <!-- Hero Banner -->
+        <section class="min-h-[500px] lg:min-h-[640px] bg-cover bg-center flex items-center justify-center relative">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Flex Item -->
+            <div class="text-center text-white px-8 py-16 lg:py-24 z-10">
+                <h2 class="font-semibold text-5xl lg:text-7xl xl:text-8xl mb-5 lg:mb-6">Spring, in Full Colour</h2>
+                <p class="text-2xl lg:text-3xl mb-10">Wander Alberta’s prairies, parks, and foothills as the season wakes.</p>
+                <a href="#" class="inline-flex bg-emerald-700 hover:bg-emerald-600 transition duration-300 px-6 py-3 lg:py-4 lg:px-8 rounded-full focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-300 focus-visible:ring-offset-2">Explore the Bloom</a>
+            </div>
+        </section>
+
+        <!-- Two-Column Info Block -->
+        <section class="container mx-auto bg-white p-8 lg:p-12 shadow-md border border-gray-200 rounded-lg md:flex md:gap-10">
+            <!-- Column 1 -->
+            <div class="md:w-1/2">
+                <h2 class="font-semibold text-2xl lg:text-4xl xl:text-5xl text-slate-800 mb-5">See Spring Unfold</h2>
+                <p class="mb-5">From the first shoots nudging through thawing soil to meadows brushed with colour, Alberta’s spring is a story told in stages. We’ll help you spot what’s in bloom, where to walk, and when to look—so each visit feels like good timing.</p>
+                <a href="#" class="inline-flex items-center justify-end w-full gap-2 font-semibold text-emerald-800 underline underline-offset-4 decoration-emerald-400 hover:text-emerald-700 text-lg lg:text-xl my-7 py-2 rounded-md transition duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <title>Right Arrow Icon</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <h2 class="font-semibold text-2xl lg:text-4xl xl:text-5xl text-slate-800 mb-5">Grow It. Guard It.</h2>
+                <p class="mb-5">Native plants do more than look lovely—they feed bees, shelter butterflies, and steady fragile habitats. Fabled Flora celebrates Alberta’s wild flora with practical guidance for pollinator-friendly gardens, drought-wise planting, and small choices that make a big ecological difference.</p>
+                <a href="#" class="inline-flex items-center justify-end w-full gap-2 font-semibold text-emerald-800 underline underline-offset-4 decoration-emerald-400 hover:text-emerald-700 text-lg lg:text-xl my-7 py-2 rounded-md transition duration-300 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-500">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <title>Right Arrow Icon</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Three-Column Card Components -->
+        <section class="container mx-auto px-3 mb-40">
+            <h2 class="font-semibold text-3xl lg:text-5xl text-slate-800 mb-8 lg:mb-10">Latest Articles</h2>
+
+            <!-- Grid Container -->
+            <div>
+                <!-- Card 1 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                    <img src="img/pink-flowers.webp" alt="Pink flowers against a pale blue sky." class="w-full object-cover aspect-[16/9]">
+                    <div class="flex flex-1 flex-col p-6">
+                        <h3 class="font-semibold text-xl lg:text-2xl mb-3">Pollinator-Friendly Planting: A Starter List for Alberta Gardens</h3>
+                        <p class="text-slate-700">Build a garden that buzzes with life. Learn which natives suit small spaces, how to create bloom “handover” from spring to autumn, and simple ways to add water, shelter, and nesting spots.</p>
+
+                        <!-- Actions -->
+                        <div class="mt-auto pt-8 flex items-center justify-between">
+                            <a href="#" class="inline-block px-5 bg-emerald-800 hover:bg-emerald-700 transition duration-300 rounded-full py-2 text-white text-sm lg:text-base uppercase tracking-wide focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-emerald-300">Read More</a>
+
+                            <!-- Bookmark -->
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <span>Bookmark</span>
+                            </div> <!-- end of bookmark bar -->
+                        </div> <!-- end of actions -->
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                    <img src="img/spring-green.webp" alt="Fresh spring greenery in melting snow." class="w-full object-cover aspect-[16/9]">
+                    <div class="flex flex-1 flex-col p-6">
+                        <h3 class="font-semibold text-xl lg:text-2xl mb-3">Five Early Blooms that Beat the Frost</h3>
+                        <p class="text-slate-700">Meet the hardy heralds of spring—prairie crocus, snowdrop, willow catkins, and more—and find out where and when to see them as winter finally loosens its grip.</p>
+
+                        <!-- Actions -->
+                        <div class="mt-auto pt-8 flex items-center justify-between">
+                            <a href="#">Read More</a>
+
+                            <!-- Bookmark -->
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <span>Bookmark</span>
+                            </div> <!-- end of bookmark bar -->
+                        </div> <!-- end of actions -->
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                    <img src="img/tulips.webp" alt="A bouquet of colourful tulips." class="w-full object-cover aspect-[16/9]">
+                    <div class="flex flex-1 flex-col p-6">
+                        <h3 class="font-semibold text-xl lg:text-2xl mb-3">Tulip Toolkit: Planting Depths, Colour Pairings, and Myths</h3>
+                        <p class="text-slate-700">Tulips are crowd-pleasers for a reason. Get planting basics, easy colour schemes that sing, and fixes for common problems like legginess and flop.</p>
+
+                        <!-- Actions -->
+                        <div class="mt-auto pt-8 flex items-center justify-between">
+                            <a href="#">Read More</a>
+
+                            <!-- Bookmark -->
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <span>Bookmark</span>
+                            </div> <!-- end of bookmark bar -->
+                        </div> <!-- end of actions -->
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <h2>Fabled Flora</h2>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gardening Guide</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <p>&copy; <span id="year"></span> Fabled Flora. All rights imagined. Crafted with care in Alberta.</p>
+            <p>All copy generated by ChatGPT 5.</p>
+        </section>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>
